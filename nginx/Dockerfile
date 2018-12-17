@@ -1,4 +1,4 @@
-FROM registry.cn-shenzhen.aliyuncs.com/tumi/alpine:3.8
+FROM registry.cn-shenzhen.aliyuncs.com/tumi/alpine
 
 ENV NGINX_VERSION 1.15.7
 
