@@ -109,4 +109,6 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+COPY conf/pip.conf ~/.pip/pip.conf
+
 CMD ["python3"]
