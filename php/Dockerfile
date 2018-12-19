@@ -1,4 +1,4 @@
-FROM FROM registry.cn-shenzhen.aliyuncs.com/tumi/alpine
+FROM registry.cn-shenzhen.aliyuncs.com/tumi/alpine
 
 ENV PHPIZE_DEPS \
 		autoconf \
