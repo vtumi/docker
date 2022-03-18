@@ -1,0 +1,13 @@
+Package: partx-utils
+Version: 2.36.1-2
+Depends: libc, libblkid1, libsmartcols1
+Source: package/utils/util-linux
+SourceName: partx-utils
+License: GPL-2.0
+LicenseFiles: COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: utils
+SourceDateEpoch: 1613430014
+CPE-ID: cpe:/a:kernel:util-linux
+Architecture: i386_pentium4
+Installed-Size: 40551
+Description:  contains partx, addpart, delpart

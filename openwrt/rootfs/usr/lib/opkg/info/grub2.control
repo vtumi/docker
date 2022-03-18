@@ -1,0 +1,11 @@
+Package: grub2
+Version: 2.04-3
+Depends: libc
+Source: package/boot/grub2
+SourceName: grub2
+Section: boot
+SourceDateEpoch: 1585831346
+CPE-ID: cpe:/a:gnu:grub2
+Architecture: i386_pentium4
+Installed-Size: 337799
+Description:  GRand Unified Bootloader (pc)

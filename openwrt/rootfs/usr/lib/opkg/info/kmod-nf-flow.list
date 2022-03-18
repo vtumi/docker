@@ -1,0 +1,3 @@
+/lib/modules/5.4.179/nf_flow_table.ko
+/etc/modules.d/nf-flow
+/lib/modules/5.4.179/nf_flow_table_hw.ko

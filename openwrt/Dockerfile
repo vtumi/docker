@@ -1,12 +1,9 @@
-ARG CI_REGISTRY_IMAGE
-FROM $CI_REGISTRY_IMAGE:base
+FROM scratch
 
-MAINTAINER Paul Spooren <mail@aparcar.org>
+ADD ./rootfs /
 
-COPY --chown=build:build . /home/build/openwrt/
-RUN chown build:build /home/build/openwrt/
+EXPOSE 80 443 22
 
-USER build
-ENV HOME /home/build
-WORKDIR /home/build/openwrt/
+USER root
 
+CMD ["/sbin/init"]

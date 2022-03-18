@@ -1,0 +1,17 @@
+Package: libwolfssl5.1.1.99a5b54a
+Version: 5.1.1-stable-1
+Depends: libc
+Provides: libcyassl, libwolfssl, libcyassl5.1.1.99a5b54a
+Source: package/libs/wolfssl
+SourceName: libwolfssl
+License: GPL-2.0-or-later
+LicenseFiles: LICENSING COPYING
+Section: libs
+SourceDateEpoch: 1644708188
+ABIVersion: 5.1.1.99a5b54a
+CPE-ID: cpe:/a:wolfssl:wolfssl
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: i386_pentium4
+Installed-Size: 527709
+Description:  wolfSSL (formerly CyaSSL) is an SSL library optimized for small
+ footprint, both on disk and for memory use.
