@@ -21,9 +21,6 @@ RUN apk add --no-cache \
   php8-xmlreader \
   php8-zlib
 
-# Create symlink so programs depending on `php` still function
-RUN ln -s /usr/bin/php8 /usr/bin/php
-
 # Add composer
 RUN curl -sS https://getcomposer.org/installer | php && \
     chmod +x composer.phar && \
