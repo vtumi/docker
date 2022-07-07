@@ -27,7 +27,11 @@ RUN curl -sS https://getcomposer.org/installer | php && \
     chmod +x composer.phar && \
     mv composer.phar /usr/local/bin/composer
 
+# Configure PHP-FPM
+COPY config/fpm-pool.conf /etc/php8/php-fpm.d/www.conf
+COPY config/php.ini /etc/php8/conf.d/custom.ini
+
 STOPSIGNAL SIGQUIT
 
 EXPOSE 9000
-CMD ["php-fpm"]
+CMD ["php-fpm8", "-F"]
