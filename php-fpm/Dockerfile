@@ -16,6 +16,7 @@ RUN apk add --no-cache \
   php8-openssl \
   php8-pdo \
   php8-pdo_mysql \
+  php8-phar \
   php8-session \
   php8-xml \
   php8-xmlreader \
