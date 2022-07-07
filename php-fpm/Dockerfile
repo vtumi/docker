@@ -1,11 +1,35 @@
-FROM php:7-fpm-alpine3.8
+ARG ALPINE_VERSION=3.16
+FROM alpine:${ALPINE_VERSION}
 
-RUN echo -e "http://mirrors.aliyun.com/alpine/v3.8/main/\n\
-http://mirrors.aliyun.com/alpine/v3.8/community/\n\
-@community http://mirrors.aliyun.com/alpine/edge/community\n\
-@testing http://mirrors.aliyun.com/alpine/edge/testing" > /etc/apk/repositories \
-    && apk update
-RUN apk add --no-cache tzdata \
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo "Asia/Shanghai" > /etc/timezone \
-    && apk del tzdata
+# Install packages and remove default server definition
+RUN apk add --no-cache \
+  curl \
+  php8 \
+  php8-curl \
+  php8-dom \
+  php8-fpm \
+  php8-gd \
+  php8-json \
+  php8-mbstring \
+  php8-mysqli \
+  php8-opcache \
+  php8-openssl \
+  php8-pdo \
+  php8-pdo_mysql \
+  php8-session \
+  php8-xml \
+  php8-xmlreader \
+  php8-zlib
+
+# Create symlink so programs depending on `php` still function
+RUN ln -s /usr/bin/php8 /usr/bin/php
+
+# Add composer
+RUN curl -sS https://getcomposer.org/installer | php && \
+    chmod +x composer.phar && \
+    mv composer.phar /usr/local/bin/composer
+
+STOPSIGNAL SIGQUIT
+
+EXPOSE 9000
+CMD ["php-fpm"]
