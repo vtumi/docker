@@ -1,7 +1,7 @@
 ARG ALPINE_VERSION=3.16
 FROM alpine:${ALPINE_VERSION}
 
-# Install packages and remove default server definition
+# Install packages
 RUN apk add --no-cache \
   curl \
   php8 \
