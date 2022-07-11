@@ -30,4 +30,5 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 STOPSIGNAL SIGQUIT
 
 EXPOSE 9000
+
 CMD ["php-fpm8", "-F"]
