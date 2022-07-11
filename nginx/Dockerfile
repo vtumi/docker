@@ -1,6 +1,10 @@
-FROM nginx:alpine
+ARG ALPINE_VERSION=3.16
+FROM alpine:${ALPINE_VERSION}
 
-RUN apk add --no-cache tzdata \
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo "Asia/Shanghai" > /etc/timezone \
-    && apk del tzdata
+# Install packages
+RUN apk add --no-cache nginx
+
+STOPSIGNAL SIGQUIT
+
+EXPOSE 80 443
+CMD ["nginx", "-g", "'daemon off;'"]
