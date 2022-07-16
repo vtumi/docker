@@ -40,3 +40,10 @@ jobs:
           context: ./php-fpm
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/php-fpm:latest
+      -
+        name: Build and push mosquitto
+        uses: docker/build-push-action@v3
+        with:
+          context: ./mosquitto
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mosquitto:latest
