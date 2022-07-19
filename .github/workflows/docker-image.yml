@@ -54,3 +54,10 @@ jobs:
           context: ./homeassistant
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/homeassistant:latest
+      -
+        name: Build and push unblockneteasemusic
+        uses: docker/build-push-action@v3
+        with:
+          context: ./unblockneteasemusic
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/unblockneteasemusic:latest
