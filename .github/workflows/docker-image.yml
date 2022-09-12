@@ -61,3 +61,10 @@ jobs:
           context: ./unblockneteasemusic
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/unblockneteasemusic:latest
+      -
+        name: Build and push docker-osx-vnc
+        uses: docker/build-push-action@v3
+        with:
+          context: ./docker-osx-vnc
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-osx-vnc:latest
