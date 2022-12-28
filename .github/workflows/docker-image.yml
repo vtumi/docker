@@ -68,3 +68,10 @@ jobs:
           context: ./docker-osx-vnc
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-osx-vnc:latest
+      -
+        name: Build and push wechaty
+        uses: docker/build-push-action@v3
+        with:
+          context: ./wechaty
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wechaty:latest
