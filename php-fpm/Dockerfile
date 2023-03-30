@@ -20,7 +20,8 @@ RUN apk add --no-cache \
   php8-session \
   php8-xml \
   php8-xmlreader \
-  php8-zlib
+  php8-zlib \
+  php8-simplexml
 
 # Add composer
 RUN curl -sS https://getcomposer.org/installer | php && \
