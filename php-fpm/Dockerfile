@@ -25,7 +25,7 @@ RUN apk add --no-cache \
   php81-zlib
 
 # Add composer
-RUN curl -sS https://getcomposer.org/installer | php && \
+RUN curl -sS https://getcomposer.org/installer | /usr/bin/php81 && \
     chmod +x composer.phar && \
     mv composer.phar /usr/local/bin/composer
 
@@ -33,4 +33,4 @@ STOPSIGNAL SIGQUIT
 
 EXPOSE 9000
 
-CMD ["php-fpm81", "-F"]
+CMD ["/usr/sbin/php-fpm81", "-F"]
